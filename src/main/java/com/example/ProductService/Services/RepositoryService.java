@@ -1,11 +1,8 @@
 package com.example.ProductService.Services;
 
-import com.example.ProductService.Models.Review;
 import com.example.ProductService.Repository.ReviewRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
 
 
 @Service
@@ -35,8 +32,7 @@ public class RepositoryService implements CommandLineRunner {
         //
         //To use Lombok comfortably during development, install the Lombok plugin in the IDE so that
         //the editor can understand the generated methods (getters, setters, builder, etc.).
-        Review r=Review.builder().content("play chess").rating(4.5).build();
-        this.reviewRepository.save(r);
+
 
 
     }

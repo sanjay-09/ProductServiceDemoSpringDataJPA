@@ -1,9 +1,8 @@
 package com.example.ProductService.Models;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -11,17 +10,15 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.util.Date;
 
 
-
+@MappedSuperclass
 @Getter
 @Setter
-@MappedSuperclass
-
 @EntityListeners(AuditingEntityListener.class)
 public class BaseModel {
 
      @Id
-     @GeneratedValue(strategy = GenerationType.IDENTITY)
-     private Long it;
+     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+     private Long id;
 
      @CreatedDate
      protected Date createdAt;
