@@ -35,7 +35,7 @@ public class RepositoryService implements CommandLineRunner {
         //
         //To use Lombok comfortably during development, install the Lombok plugin in the IDE so that
         //the editor can understand the generated methods (getters, setters, builder, etc.).
-        Review r=Review.builder().content("read the book").created_at(new Date()).updated_at(new Date()).rating(3.4).build();
+        Review r=Review.builder().content("play chess").rating(4.5).build();
         this.reviewRepository.save(r);
 
 

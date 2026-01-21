@@ -17,22 +17,22 @@ import java.util.Date;
 @AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)  //Call Spring’s auditing code whenever this entity is inserted or updated.
 @Table(name="BookingReview")
-public class Review{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+public class Review extends BaseModel{
 
+
+    @Column(nullable=false)
     String content;
 
     @Column(nullable = false)
-    double rating;
+    Double rating;
 
-    @Column(nullable=false)
-    @CreatedDate  //only handled when object is created
-    Date created_at;
-
-    @Column(nullable = false)
-     @LastModifiedDate //this annotation tells only handles when the object is updated
-    Date updated_at;
-
+    @Override
+    public String toString() {
+        return "Review{" +
+                "updatedAt=" + updatedAt +
+                ", createdAt=" + createdAt +
+                ", rating=" + rating +
+                ", content='" + content + '\'' +
+                '}';
+    }
 }
