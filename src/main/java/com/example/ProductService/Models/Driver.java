@@ -3,8 +3,10 @@ package com.example.ProductService.Models;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToMany;
 import lombok.*;
+import org.hibernate.annotations.Fetch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +28,13 @@ public class Driver extends BaseModel {
     @OneToMany(mappedBy = "driver")
     private List<Booking> booking;
 
-
-
-
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "updatedAt=" + updatedAt +
+                ", createdAt=" + createdAt +
+                ", licenseNumber='" + licenseNumber + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

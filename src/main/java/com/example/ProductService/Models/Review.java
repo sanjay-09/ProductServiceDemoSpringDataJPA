@@ -20,8 +20,11 @@ import java.util.Date;
 @AllArgsConstructor
 //@EntityListeners(AuditingEntityListener.class)  //Call Spring’s auditing code whenever this entity is inserted or updated.
 @Table(name="BookingReview")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Review extends BaseModel{
-
+    //Review->Booking->Driver
+    //          |
+    //          Passenger
     @Column(nullable=false)
     String content;
 
@@ -29,8 +32,6 @@ public class Review extends BaseModel{
     Double rating;
 
     @OneToOne
-    @JoinColumn(name = "booking_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
     private Booking booking;
 
     @Override

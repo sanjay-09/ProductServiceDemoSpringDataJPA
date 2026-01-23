@@ -8,10 +8,7 @@ import lombok.*;
 @Entity
 @Getter
 @Setter
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-public class PassengerRating extends BaseModel{
+public class PassengerRating extends Review{
     @Column(nullable = false)
     private String passengerReviewContent;
     @Column(nullable = false)

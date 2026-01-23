@@ -2,6 +2,7 @@ package com.example.ProductService.Models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToMany;
 import lombok.*;
 
@@ -23,6 +24,6 @@ public class Passenger extends BaseModel {
     private String adharNunber;
 
 
-    @OneToMany
+    @OneToMany(mappedBy = "passenger",fetch = FetchType.EAGER)
     private List<Booking> Bookings;
 }
