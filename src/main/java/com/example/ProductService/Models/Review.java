@@ -32,6 +32,7 @@ public class Review extends BaseModel{
     Double rating;
 
     @OneToOne
+    @JoinColumn(nullable = false)
     private Booking booking;
 
     @Override
@@ -43,6 +44,7 @@ public class Review extends BaseModel{
                 ", content='" + content + '\'' +
                 '}';
     }
+
 
 
 

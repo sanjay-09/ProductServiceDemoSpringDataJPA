@@ -18,7 +18,6 @@ public class Booking extends  BaseModel  {
     @Enumerated(value= EnumType.STRING)
     private BookingStatus bookingStatus;
 
-
     private Date StartTime;
 
     private Date endTime;
@@ -27,7 +26,6 @@ public class Booking extends  BaseModel  {
 
     @ManyToOne
     private Driver driver;
-
 
     @ManyToOne
     private Passenger passenger;
